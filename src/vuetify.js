@@ -23,7 +23,7 @@ const customLightTheme = {
     colors: {
         background: "#ECEFF1",
         surface: "#eff2f3",
-        primary: "#607D8B",
+        primary: "#212121",
         secondary: "#F5F5DC",
         error: "#EF5350",
         warning:"#FFD180",
@@ -48,57 +48,27 @@ const vuetify = createVuetify({
             customLightTheme,
         },
     },
-    // defaults:{
-    //     global:{
-    //         transition:"slide-x-transition"
-    //     },
-    //     VCard: {
-    //         elevation:5,
-    //         VTextField: { 
-    //             variant:'underlined',
-    //             density:'compact'
-    //         },
-    //         VTextarea: { 
-    //             variant:'underlined',
-    //             density:'compact'
-    //         },
-    //         VAutocomplete: { 
-    //             variant:'underlined',
-    //             density:'compact' 
-    //         },
-    //         VSelect: { 
-    //             variant:'underlined',
-    //             density:'compact' 
-    //         },
-    //         VBtn:{
-    //             color:'primary',
-    //         }
-    //     },
-    //     VSheet:{
-    //         VTextField: { 
-    //             variant:'outlined',
-    //             density:'compact'
-                
-    //         },
-    //     },
-    //     VPagination:{
-    //         color:"primary",
-    //         activeColor:"secondary",
-    //         density:"comfortable",
-    //         variant:"elevated",
-    //     },
-    //     VTable:{
-    //         VBtn:{
-    //             variant:'tonal',
-    //         }
-    //     },
-    //     VTooltip:{
-    //         activator:"parent",
-    //         location:"top"
-    //     },
-    //     VIcon:{
-    //     }
-    // },
+    defaults:{
+        global:{
+        },
+        VAppBar:{
+            color:"primary"
+        },
+        VCard: {
+        },
+        VSheet:{
+        },
+        VPagination:{
+        },
+        VTable:{
+        },
+        VTooltip:{
+            activator:"parent",
+            location:"top"
+        },
+        VIcon:{
+        }
+    },
     icons: {
         defaultSet: 'mdi',
     },
