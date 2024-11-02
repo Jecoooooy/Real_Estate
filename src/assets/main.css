@@ -1,5 +1,5 @@
 @import './navigation.css';
 
 .photo-overlay{
-    background-image: linear-gradient(0deg,black,white);
+    background-image: linear-gradient(0deg,black,rgba(255, 255, 255, 0));
 }
