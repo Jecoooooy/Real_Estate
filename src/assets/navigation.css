@@ -1,0 +1,5 @@
+.nav-logo img{
+    mix-blend-mode: color;
+    color: white;
+    transition: filter 0.5s ease;
+}

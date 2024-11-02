@@ -11,8 +11,8 @@ const customDarkTheme = {
     colors: {
         background: "#B0BEC5",
         surface: "#CFD8DC",
-        primary: "#F5F5DC",
-        secondary: "#607D8B",
+        primary: "#212121",//darkGray
+        secondary: "#F5F5DC",
         error: "#ff5722",
         text:"#ffffff"
         
@@ -23,8 +23,8 @@ const customLightTheme = {
     colors: {
         background: "#ECEFF1",
         surface: "#eff2f3",
-        primary: "#212121",
-        secondary: "#F5F5DC",
+        primary: "#F5F5DC", 
+        secondary: "#212121",//darkGray
         error: "#EF5350",
         warning:"#FFD180",
         success:"#66BB6A",
