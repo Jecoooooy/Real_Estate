@@ -29,41 +29,51 @@ export const useDataStore = defineStore('data', {
         sellingProcess:[
             {
                 id:1,
-                title:'Initial Consultation & Planning'
+                title:'Initial',
+                image:'./images/sellingProcess/photo1.jpg',
+                content:'Initial Consultation & Planning',
             },
             {
                 id:2,
-                title:'Devise & Execute Marketing Plan'
+                title:'Execute',
+                image:'./images/sellingProcess/photo2.jpg',
+                content:'Devise & Execute Marketing Plan'
             },
             {
                 id:3,
-                title:'Review Offers & Reach Agreement with Buyer'
+                title:'Review',
+                image:'./images/sellingProcess/photo3.jpg',
+                content:'Review Offers & Reach Agreement with Buyer'
             },
             {
                 id:4,
-                title:'Complete Transaction Process'
+                title:'Complete',
+                image:'./images/sellingProcess/photo4.jpg',
+                content:'Complete Transaction Process'
             },
             {
                 id:5,
-                title:'After - Sale Service'
+                title:'After Sale',
+                image:'./images/sellingProcess/photo5.jpg',
+                content:'After - Sale Service'
             },
         ],
         buyingProcess:[
             {
                 id:1,
-                title:'Initial Consultation & Planning'
+                content:'Initial Consultation & Planning'
             },
             {
                 id:2,
-                title:'Search for a Home & Get Pre-Approved'
+                content:'Search for a Home & Get Pre-Approved'
             },
             {
                 id:3,
-                title:'Submit an Offer'
+                content:'Submit an Offer'
             },
             {
                 id:4,
-                title:'Complete Settlement Process'
+                content:'Complete Settlement Process'
             },
         ]
     }),

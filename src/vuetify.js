@@ -9,7 +9,7 @@ import '@mdi/font/css/materialdesignicons.css'
 const customDarkTheme = {
     dark: true,
     colors: {
-        background: "#B0BEC5",
+        background: "#BDBDBD",
         surface: "#CFD8DC",
         primary: "#212121",//darkGray
         secondary: "#F5F5DC",
