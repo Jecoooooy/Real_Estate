@@ -3,7 +3,7 @@ import { defineStore } from 'pinia';
 export const useDataStore = defineStore('data', {
     state: () => ({
         drawer:false,
-        darkMode:false,
+        darkMode:true,
         ComprehensiveMarketingPlanData:[
             {
                 image:'./images/cmp/photo1.png',
@@ -24,6 +24,46 @@ export const useDataStore = defineStore('data', {
                 image:'./images/cmp/photo4.png',
                 title:'Photography',
                 subTitle:'Beatiful, high-end photography is a central part of our marketing plan for your property.'
+            },
+        ],
+        sellingProcess:[
+            {
+                id:1,
+                title:'Initial Consultation & Planning'
+            },
+            {
+                id:2,
+                title:'Devise & Execute Marketing Plan'
+            },
+            {
+                id:3,
+                title:'Review Offers & Reach Agreement with Buyer'
+            },
+            {
+                id:4,
+                title:'Complete Transaction Process'
+            },
+            {
+                id:5,
+                title:'After - Sale Service'
+            },
+        ],
+        buyingProcess:[
+            {
+                id:1,
+                title:'Initial Consultation & Planning'
+            },
+            {
+                id:2,
+                title:'Search for a Home & Get Pre-Approved'
+            },
+            {
+                id:3,
+                title:'Submit an Offer'
+            },
+            {
+                id:4,
+                title:'Complete Settlement Process'
             },
         ]
     }),

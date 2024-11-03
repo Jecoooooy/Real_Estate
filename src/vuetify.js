@@ -14,7 +14,8 @@ const customDarkTheme = {
         primary: "#212121",//darkGray
         secondary: "#F5F5DC",
         error: "#ff5722",
-        text:"#ffffff"
+        text:"#ffffff",
+        third:"#9E9E9E"
         
     },
 };
@@ -29,7 +30,9 @@ const customLightTheme = {
         warning:"#FFD180",
         success:"#66BB6A",
         info:"#81D4FA",
-        text:"#424242"
+        text:"#424242",
+        third:"#FFF8E1"
+        
     },
 };
 
@@ -40,8 +43,8 @@ const vuetify = createVuetify({
     directives,
     theme: {
         defaultTheme: 
-        // "customDarkTheme"
-        "customLightTheme"
+        "customDarkTheme"
+        // "customLightTheme"
         ,
         themes: {
             customDarkTheme,
