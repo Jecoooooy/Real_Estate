@@ -7,7 +7,7 @@
             <v-row 
                 justify="center" 
             >
-                <v-col xxl="2" xl="3" lg="3" md="5" sm="6" xs="12" col="10"
+                <v-col xxl="2" xl="3" lg="3" md="5" sm="6" xs="12" cols="10"
                     v-for="(item,index) in ComprehensiveMarketingPlanData"
                 >
                     <v-card color="transparent" class="CMP-card text-white rounded-xl">
@@ -23,6 +23,7 @@
                     </v-card>
                 </v-col>
             </v-row>
+            v-
         </v-container>
     </section>
 </template>

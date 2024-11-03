@@ -1,8 +1,8 @@
 <template>
     <section id="decorGuidance">
         <v-container  >
-            <v-row align="center">
-                <v-col class="">
+            <v-row align="center" justify="center">
+                <v-col cols="12" sm="8" md="6">
                     <h2 class=" text-primary text-h3">My Staging Expertise</h2>
                     <v-list bg-color="transparent" lines="      ">
                         <v-list-item
@@ -13,7 +13,7 @@
                         ></v-list-item>
                     </v-list>
                 </v-col>
-                <v-col > 
+                <v-col cols="12" sm="8" md="6" > 
                     <v-img class="rounded-xl position-relative overflow-hidden decor-guidance-img"  src="./images/cmp/photo6.jpg">
                         <h2 class="decor-guidance-text text-primary pl-4 pa-2 text-h3 border-s-xl border-primary border-opacity-100" :style="`background: linear-gradient(90deg,${secondaryColor},#21212100);`">Decor Guidance</h2>
                     </v-img>
