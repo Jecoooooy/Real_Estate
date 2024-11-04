@@ -12,10 +12,10 @@ const customDarkTheme = {
         background: "#BDBDBD",
         surface: "#CFD8DC",
         primary: "#212121",//darkGray
-        secondary: "#F5F5DC",
+        secondary: "#FFFDE7",
         error: "#ff5722",
         text:"#ffffff",
-        third:"#9E9E9E"
+        third:"#3E2723"
         
     },
 };
@@ -24,14 +24,14 @@ const customLightTheme = {
     colors: {
         background: "#ECEFF1",
         surface: "#eff2f3",
-        primary: "#F5F5DC", 
+        primary: "#FFFDE7", 
         secondary: "#212121",//darkGray
         error: "#EF5350",
         warning:"#FFD180",
         success:"#66BB6A",
         info:"#81D4FA",
         text:"#424242",
-        third:"#FFF8E1"
+        third:"#8D6E63"
         
     },
 };

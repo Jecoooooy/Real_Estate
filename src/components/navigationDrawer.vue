@@ -1,7 +1,7 @@
 <template>
     <v-navigation-drawer
         v-model="drawer"
-        color="third"
+        color="surface"
         permanent
         v-if="$vuetify.display.mobile ? true : false"
         

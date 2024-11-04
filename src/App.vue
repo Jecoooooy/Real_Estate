@@ -23,6 +23,9 @@
 	import { useDataStore } from './store.js';
 	import { useRouter } from 'vue-router';
 
+	import {ref,onMounted,computed} from 'vue'
     const dataStore = useDataStore();
     const { drawer } = storeToRefs(dataStore);
+
+
 </script>

@@ -16,17 +16,18 @@
         </div>
         <div class="position-absolute w-100 h-100 top-0 left-0"  style="z-index:11;">
             <v-container fluid class="pa-0 d-flex w-100 h-100 justify-center align-center">
-                <div class="w-50 position-relative" style="top:-45px"> 
-                    <h2 class="text-center text-h3 text-secondary" >SERVICES</h2>
+                <div :class="(windowWidth >= 900 ? 'w-50':'w-75')  + ' position-relative'" style="top:-60px"> 
+                    <h1 class="text-center  text-secondary" >SERVICES</h1>
                     <div class="position-relative w-100">
                         <v-text-field
-                            color="secondary"
-                            class="text-secondary search font-weight-bold border-b-xl border-primary border-opacity-100"
+                            color="black"
+                            bg-color="transparent"
+                            class="text-black border-b-xl border-primary border-opacity-100 search font-weight-bold"
                             prepend-inner-icon="mdi-magnify"
                             variant="underlined"
-                            density="compact"
+                            density="comfortable"
                             hide-details
-                            placeholder="Search by Address or Area"
+                            label="Search by Address or Area"
                         ></v-text-field>
                     </div>
                         
@@ -42,6 +43,11 @@
     const theme  = useTheme ();
     const primaryColor = computed(() => theme.current.value.colors.primary);
     const secondaryColor = computed(() => theme.current.value.colors.secondary);
+    import { storeToRefs } from 'pinia';
+    import { useDataStore } from '../store.js';
+    
+    const dataStore = useDataStore();
+    const { windowWidth } = storeToRefs(dataStore);
 </script>
 <style>
 .search {
@@ -69,7 +75,7 @@
     height: 100%;
     width: 50%;
 }
-h2,.living-room input{
+.living-room input{
     filter: drop-shadow( 0px 2px 4px #424242 );
 }
 </style>

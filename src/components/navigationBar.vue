@@ -20,7 +20,7 @@
             <v-list v-if="$vuetify.display.mobile ? false : true" class="d-flex" bg-color="primary">
                 <v-list-item
                     v-for="(item,index) in routes"
-                    class="text-uppercase "
+                    class="text-uppercase rounded-xl"
                     :to="item.path"
                     :title="item.name"
                 ></v-list-item>

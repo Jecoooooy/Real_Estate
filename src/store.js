@@ -4,6 +4,7 @@ export const useDataStore = defineStore('data', {
     state: () => ({
         drawer:false,
         darkMode:true,
+        windowWidth:window.innerWidth,
         ComprehensiveMarketingPlanData:[
             {
                 image:'./images/cmp/photo1.png',
