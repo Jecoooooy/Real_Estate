@@ -1,5 +1,5 @@
 <template>
-    <section id="process" :style="` background: url('../.${sellingProcessBackground}');`">
+    <section id="process" :style="` background: url('${sellingProcessBackground}');`">
     <div :class="'section-overlay ' + (darkMode? 'dark-overlay' : 'light-overlay') " ></div>
         <v-container fluid class="position-relative" style="z-index: 3;">
         <h2 class=" text-white text-center">PROCESS</h2>
