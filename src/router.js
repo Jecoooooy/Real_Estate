@@ -35,7 +35,7 @@ const routes = [
         component: homeValuation
     },
     { 
-        path: "/",
+        path: "/real_estate",
         name:'Services',
         component: services
     },
