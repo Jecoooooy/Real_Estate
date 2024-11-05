@@ -101,16 +101,16 @@
     ])
     const slider = ref([
         {
-            image:'images/cmp/photo5.jpg',
+            image:'./images/cmp/photo5.jpg',
         },
         {
-            image:'images/cmp/photo6.jpg',
+            image:'./images/cmp/photo6.jpg',
         },
         {
-            image:'images/cmp/photo7.jpg',
+            image:'./images/cmp/photo7.jpg',
         },
         {
-            image:'images/cmp/photo8.jpg',
+            image:'./images/cmp/photo8.jpg',
         },
     ])
     const televisionScreen = ref(false)
