@@ -2,8 +2,6 @@
     <section 
         id="contact"
         :style="`background-image:linear-gradient(0deg,rgba(255, 255, 255, 0),${primaryColor}), url('./images/contactBackground.jpg');`" 
-        
-    
     >
         <v-container class="d-flex justify-center align-center h-100">
             <div class="contact-container text-secondary">
@@ -105,7 +103,7 @@
     height: 70svh;
     position: relative;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 .contact-container{
