@@ -3,7 +3,7 @@
         <v-parallax
             class="position-relative"
             
-            :src=" require('@/assets/living_room.jpg')"
+            src="images/living_room.jpg"
             height="600px"
         >
         </v-parallax>
