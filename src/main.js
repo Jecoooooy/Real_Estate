@@ -1,4 +1,5 @@
 import './assets/main.css'
+import './movableDialog.js'
 
 import router from "./router";
 import { createPinia } from 'pinia';

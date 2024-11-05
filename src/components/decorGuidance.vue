@@ -1,13 +1,13 @@
 <template>
     <section id="decorGuidance">
-        <v-container fluid >
+        <v-container >
             <h2 class="text-secondary text-center mb-10 text-uppercase"> Decor Guidance</h2>
             <v-row align="start" justify="space-around">
                 <v-col cols="12" sm="12"  md="6" lg="7" xl="5">
                 <div class="lamp container">
                     <h3 class=" text-secondary  text-center ">My Staging Expertise</h3>
                 </div>
-                    <div class=" shelf-container position-relative w-100 py-6 d-flex"  v-for="(item,index) in data">
+                    <div :class="(windowWidth >= 900 ? 'py-6':'py-4') +  ' shelf-container position-relative w-100 d-flex'"  v-for="(item,index) in data">
                         <div class="underlight">
                             <div class="underlight-group">
                                 <div :class="'w-75 underlight-left'" :style="`background: conic-gradient(from 90deg, ${secondaryColor},rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0%), rgba(255, 255, 255, 0%))`"></div>
@@ -23,11 +23,11 @@
                     </div>
                 </v-col>
                 <v-col cols="12" sm="10" md="6" lg="5" xl="5" > 
-                    <div class="carousel-container position-relative pa-6 bg-grey-darken-4 rounded-xl d-flex justify-center align-center" :style="'height:' + (windowWidth>=600 ?  '500px;' : '300px;')">
+                    <div class="carousel-container position-relative pa-6 bg-grey-darken-4 rounded-xl d-flex justify-center align-center" :style="'height:' + (windowWidth >= 800 ?  '500px;' : '300px;')">
                     <v-expand-transition>
                         <v-carousel
                             v-if="televisionScreen"
-                            :height="windowWidth>=600 ?  450 : 250"
+                            :height="windowWidth>=800 ?  450 : 250"
                             color="secondary"
                             class="carousel-custom rounded-lg"
                             style="transition: all 0.5s ease-in-out;"
@@ -187,5 +187,6 @@
     .carousel-container{
         filter:drop-shadow(0 0 16px white);
         transition: height 0.5s ease-in-out;
+        z-index: 15;
     }
 </style>

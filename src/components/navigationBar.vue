@@ -25,17 +25,33 @@
                     :title="item.name"
                 ></v-list-item>
             </v-list>
-            <v-switch
-                color="secondary"
-                density="default"
-                v-model="darkMode"
-                hide-details
-                false-icon="mdi-white-balance-sunny"
-                true-icon="mdi-weather-night"
-                base-color="secondary"
-                @change="toggleTheme()"
-                :label="` ${darkMode ? 'Dark' : 'Light'}`"
-            ></v-switch>
+            <v-btn
+                
+                size="large"
+            >
+                <v-icon>mdi-cog</v-icon>
+                <v-menu
+                    activator="parent"
+                    :close-on-content-click="false"
+                >
+                    <v-list width="250">
+                        <v-list-item>
+                            <v-switch
+                                color="secondary"
+                                density="default"
+                                v-model="darkMode"
+                                hide-details
+                                false-icon="mdi-white-balance-sunny"
+                                true-icon="mdi-weather-night"
+                                base-color="secondary"
+                                @change="toggleTheme()"
+                                :label="` ${darkMode ? 'Lights off' : 'Lights on'}`"
+                            ></v-switch>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
+            </v-btn>
+            
         </template>
         
     </v-app-bar>

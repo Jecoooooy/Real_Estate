@@ -1,6 +1,13 @@
 <template>
-    <section id="CMP" class="position-relative" :style="`background:linear-gradient(0deg,rgba(255, 255, 255, 0),${primaryColor}), url('../../public/images/cmpBackground.png');`"   >
-        <div class=" pa-6  rounded-xl CMP-title" :style="`background:linear-gradient(0deg ,rgba(255, 255, 255, 0),${primaryColor}   ,${primaryColor} ,${secondaryColor});`" >        
+    <section 
+        id="CMP" 
+        class="position-relative" 
+        :style="`background:linear-gradient(0deg,rgba(255, 255, 255, 0),${primaryColor}), url('./images/cmpBackground.png');`"   
+    >
+        <div 
+            class=" pa-6  rounded-xl CMP-title" 
+            :style="`background:linear-gradient(0deg ,rgba(255, 255, 255, 0),${primaryColor}   ,${primaryColor} ,${secondaryColor});`" 
+        >        
             <h2 class="text-center text-uppercase mt-8  text-secondary position-relative"> Comprehensive Marketing Plan</h2>
         </div>
         <v-container style="padding-top: 100px;">

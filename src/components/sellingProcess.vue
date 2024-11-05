@@ -1,10 +1,10 @@
 <template>
     <section id="process" :style="` background: url('../.${sellingProcessBackground}');`">
     <div :class="'section-overlay ' + (darkMode? 'dark-overlay' : 'light-overlay') " ></div>
-        <v-container class="position-relative" style="z-index: 3;">
+        <v-container fluid class="position-relative" style="z-index: 3;">
         <h2 class=" text-white text-center">PROCESS</h2>
             <v-row justify="center">
-                <v-col cols="12" sm="10"  md="6" lg="6" xl="6">
+                <v-col cols="12" sm="10"  md="6" lg="6" xl="5">
                 <h3 class="text-center  text-white text-uppercase pb-4">Selling</h3>
                     <v-stepper 
                         mobile 
@@ -18,23 +18,22 @@
                             <v-card 
                                 :title="`Step ${index + 1}: ${item.content}`" 
                                 flat 
-                                max-height="400px" 
                                 class="rounded-lg"
                             >
                                 <v-img
                                     :src="item.image"
-                                    height="400"
+                                    :height="windowWidth>=600 ?  400 : 200"
                                     cover
-                                    aspect-ratio="16/9"
+                                    aspect-ratio="4/3"
                                 ></v-img>
                             </v-card>
                         </template>
                     </v-stepper>
                 </v-col>
-                <v-col cols="12" sm="10"  md="6" lg="6" xl="6">
+                <v-col cols="12" sm="10"  md="6" lg="6" xl="5">
                     <h3 class="text-center text-white text-uppercase pb-4">buying</h3>
                     <v-timeline 
-                        size="small" 
+                        size="large" 
                         truncate-line="both"
                         class="position-relative"
                         density="compact" 
@@ -50,13 +49,12 @@
                             <span class="text-white">{{ item.id }}</span>
                         </template>
                         <v-sheet
-                            elevation="5"
-                            class=" pa-2 rounded-xl d-flex align-center"
+                            class="card-effect pa-2 justify-center rounded-xl d-flex align-center"
                             color="primary"
                             height="100%"
                             :value="true"
                         >
-                            <p>{{ item.content }}</p>
+                            <h5 class="text-center">{{ item.content }}</h5>
                         </v-sheet>
                         </v-timeline-item>
                     </v-timeline>
@@ -67,11 +65,11 @@
 
 </template>
 <script setup>
-        import { storeToRefs } from 'pinia';
+    import { storeToRefs } from 'pinia';
     import { useDataStore } from '../store.js';
     
     const dataStore = useDataStore();
-    const { sellingProcess, buyingProcess,darkMode } = storeToRefs(dataStore);
+    const { sellingProcess, buyingProcess,darkMode,windowWidth } = storeToRefs(dataStore);
 
 
     import {ref,onMounted,computed} from "vue"
@@ -80,7 +78,7 @@
     const primaryColor = computed(() => theme.current.value.colors.primary);
     const secondaryColor = computed(() => theme.current.value.colors.secondary);
 
-    const sellingProcessStep = ref(1)
+    const sellingProcessStep = ref(2)
     const sellingProcessBackground = ref('./images/sellingProcess/photo1.jpg')
     function changeBackground(){
         for (let index = 0; index < sellingProcess.value.length; index++) {
@@ -101,7 +99,6 @@
     background-position: center  !important;
     background-size: cover  !important;
     box-shadow: 0 8px 8px #424242;
-    border-radius: 20px 20px 0px 0px; 
     overflow: hidden;
     transition: background 0.5s ease-in-out;
 }
@@ -119,5 +116,8 @@
 }
 .light-overlay{
     background: linear-gradient(180deg,rgba(255, 255, 255, 0.219),rgb(0, 0, 0));
+}
+.card-effect{
+    box-shadow: 0 8px 12px #212121bd, 0px 8px 12px #777777c5 inset!important;
 }
 </style>
