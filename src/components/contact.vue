@@ -26,59 +26,69 @@
             </div>
         </v-container>
         <v-dialog v-model="contactDialog" transition="fab-transition" max-width="500px">
-            <v-card>
-                <v-card-title class="bg-primary d-flex justify-space-between align-center move" >
-                    <h4>Send a Message</h4>
-                    <v-btn
-                        icon="mdi-close"
-                        rounded
-                        size="small"
-                        color="error"
-                        density="comfortable"
-                        @click="contactDialog = false"
-                    ></v-btn>
-                </v-card-title>
-                <v-card-text>   
-                    <v-text-field
-                        label="name"
-                        variant="underlined"
-                        density="comfortable"
-                    ></v-text-field>
-                    <v-text-field
-                        label="phone"
-                        variant="underlined"
-                        density="comfortable"
-                    ></v-text-field>
-                    <v-text-field
-                        label="Email address"
-                        variant="underlined"
-                        density="comfortable"
-                    ></v-text-field>
-                    <v-text-field
-                        label="Message"
-                        variant="underlined"
-                        density="comfortable"
-                    ></v-text-field>
+            <v-form ref="form" id="form" @submit.prevent="sendMessage()"> 
+                <v-card>
+                    <v-card-title class="bg-primary d-flex justify-space-between align-center move" >
+                        <h4>Send a Message</h4>
+                        <v-btn
+                            icon="mdi-close"
+                            rounded
+                            size="small"
+                            color="error"
+                            density="comfortable"
+                            @click="contactDialog = false"
+                        ></v-btn>
+                    </v-card-title>
+                    <v-card-text>   
+                        <v-text-field
+                            label="name"
+                            name="name"
+                            variant="underlined"
+                            density="comfortable"
+                        ></v-text-field>
+                        <v-text-field
+                            label="phone"
+                            name="phone"
+                            variant="underlined"
+                            density="comfortable"
+                        ></v-text-field>
+                        <v-text-field
+                            label="Email address"
+                            name="email"
+                            variant="underlined"
+                            density="comfortable"
+                        ></v-text-field>
+                        <v-text-field
+                            label="Message"
+                            name="message"
+                            variant="underlined"
+                            density="comfortable"
+                        ></v-text-field>
 
-                    <v-checkbox
-
-                    >
-                        <template v-slot:label >
-                        <p >
-                                By providing Julie Hansen Partnership your contact information, 
-                            you acknowledge and agree to our Privacy Policy and consent to receiving marketing communications, 
-                            including through automated calls, texts, and emails, some of which may use artificial or prerecorded voices. 
-                            This consent isn’t necessary for purchasing any products or services and you may opt out at any time. To opt out from texts, 
-                            you can reply, ‘stop’ at any time. To opt out from emails, you can click on the unsubscribe link in the emails. Message and data rates may apply.
-                        </p>
-                        </template>
-                    </v-checkbox>
-                    
-                </v-card-text>
-                <v-card-actions>
-                    <v-btn block color="primary" variant="flat" text="send"></v-btn>
-                </v-card-actions>
-            </v-card>
+                        <v-checkbox>
+                            <template v-slot:label >
+                            <p >
+                                    By providing Julie Hansen Partnership your contact information, 
+                                you acknowledge and agree to our Privacy Policy and consent to receiving marketing communications, 
+                                including through automated calls, texts, and emails, some of which may use artificial or prerecorded voices. 
+                                This consent isn’t necessary for purchasing any products or services and you may opt out at any time. To opt out from texts, 
+                                you can reply, ‘stop’ at any time. To opt out from emails, you can click on the unsubscribe link in the emails. Message and data rates may apply.
+                            </p>
+                            </template>
+                        </v-checkbox>
+                        
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-btn 
+                            block 
+                            color="primary" 
+                            variant="flat" 
+                            type="sumbit"
+                            text="send"
+                        ></v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-form>
         </v-dialog>
     </section>
 </template>
@@ -97,6 +107,15 @@
     const secondaryColor = computed(() => theme.current.value.colors.secondary);
 
     const contactDialog = ref(false)
+
+    function sendMessage(){
+        const form = document.getElementById('form')
+        console.log(form);
+        
+        const formData = new FormData(form)
+        console.log(formData);
+        
+    }
 </script>
 <style>
 #contact{

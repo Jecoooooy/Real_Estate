@@ -11,6 +11,8 @@
                 <v-col 
                     order="2" 
                     :order-md="item.id % 2 == 0 ? 2 : 1" 
+                    lg="7"
+                    xl="8"
                     md="6" 
                     sm="10" 
                     cols="12"
@@ -29,11 +31,23 @@
                         </ul>
                     </div>
                 </v-col>
-                <v-col order="1" :order-md="item.id % 2 == 0 ? 1 : 2" md="6" sm="10" cols="12">
+                <v-col 
+                    order="1" 
+                    :order-md="item.id % 2 == 0 ? 1 : 2" 
+                    xl="4" 
+                    lg="5" 
+                    md="6" 
+                    sm="10" 
+                    cols="12"
+                >
                 <div class="photo-container">
                     <div class="photo-card bg-primary">
-                    <v-img class="photo" :src="item.image" height="100%" aspect-ratio="1/1">
-                    </v-img>
+                    <v-img 
+                        class="photo" 
+                        :src="item.image" 
+                        height="100%" 
+                        aspect-ratio="1/1"
+                    ></v-img>
                     </div>
                 </div>
                 </v-col>

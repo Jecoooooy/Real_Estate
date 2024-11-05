@@ -16,29 +16,38 @@
             >
                 <v-col xxl="2" xl="3" lg="3" md="6" sm="5"  cols="6"
                     v-for="(item,index) in ComprehensiveMarketingPlanData"
+                    style="min-height: 300px;"
+                    :id="'cmpCard'+index"
                 >
-                    <v-card :height="cardHeight" color="transparent" class="CMP-card text-white rounded-xl ">
-                        <v-card-item>
-                            <v-img 
-                                :src="item.image"
-                                :height="cardImgHeight"
-                                aspect-ratio="1/1"
-                            ></v-img>
-                        </v-card-item>
-                        <div>
-                            <v-card-title class="text-center" tag="h5">
-                                {{ item.title }}
-                            </v-card-title>
-                            <v-card-text tag="p" class="text-center " >{{ item.subTitle }}</v-card-text>
-                        </div>
-                    </v-card>
+                    <transition name="slide-up" mode="out-in">
+                        <v-card 
+                            v-if="item.show"
+                            :height="cardHeight" 
+                            color="transparent" 
+                            class="CMP-card text-white rounded-xl "
+                        >
+                            <v-card-item>
+                                <v-img 
+                                    :src="item.image"
+                                    :height="cardImgHeight"
+                                    aspect-ratio="1/1"
+                                ></v-img>
+                            </v-card-item>
+                            <div>
+                                <v-card-title class="text-center" tag="h5">
+                                    {{ item.title }}
+                                </v-card-title>
+                                <v-card-text tag="p" class="text-center " >{{ item.subTitle }}</v-card-text>
+                            </div>
+                        </v-card>
+                    </transition>
                 </v-col>
             </v-row>
         </v-container>
     </section>
 </template>
 <script setup>
-    import {ref,onMounted,computed} from "vue"
+    import {ref,onMounted,computed,onBeforeUnmount} from "vue"
     import { useTheme  } from 'vuetify';
 
     import { storeToRefs } from 'pinia';
@@ -72,15 +81,60 @@
         }
         
     }
+
     const handleResize = () => {
         windowWidth.value = window.innerWidth;
         resize()
     };
 
+    function scrolling(){
+        const windowHeight = window.innerHeight;
+        const windowBottom = window.scrollY + (windowHeight - 200)
+        const windowTop = window.scrollY + 200
+        const mainPageRect = document.getElementById('mainContent').getBoundingClientRect()
+
+        for (let index = 0; index < ComprehensiveMarketingPlanData.value.length; index++) {
+            const element = ComprehensiveMarketingPlanData.value[index];
+            const cmpCardSection = document.getElementById('cmpCard'+index)
+            
+            const cmpCardSectionRect = cmpCardSection.getBoundingClientRect()
+            const cmpCardSectionTop = cmpCardSectionRect.top - mainPageRect.top
+            const cmpCardSectionBottom = cmpCardSectionTop + cmpCardSectionRect.height
+            
+            if( windowBottom > cmpCardSectionTop  &&  windowTop < cmpCardSectionBottom){
+                // console.log('inside');
+                element.show = true
+            }else{
+                // console.log('outside');
+                element.show = false
+            }
+        }
+        
+
+    }
+
+
+
+
+
+
+
 	onMounted(async () => {
         resize()
 	    window.addEventListener('resize', handleResize);
+        window.addEventListener("scroll", scrolling);
     })
+
+
+
+
+    onBeforeUnmount(() => {
+        window.removeEventListener('resize', handleResize);
+        window.removeEventListener("scroll", scrolling);
+    })
+
+
+
 </script>
 <style>
     .CMP-title{
@@ -126,5 +180,20 @@
     }
     .city-divider{
         
+    }
+
+    .slide-up-enter-active {
+        transition: all 0.3s ease-out !important;
+    }
+
+    .slide-up-leave-active {
+        transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1)!important;
+    }
+
+    .slide-up-enter-from,
+    .slide-up-leave-to {
+        transform: translateY(50%);
+        scale: 0;
+        opacity: 0;
     }
 </style>

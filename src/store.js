@@ -9,22 +9,26 @@ export const useDataStore = defineStore('data', {
             {
                 image:'./images/cmp/photo1.png',
                 title:'Responsive',
-                subTitle:'I am always available via phone, text, or email.'
+                subTitle:'I am always available via phone, text, or email.',
+                show:false,
             },
             {
                 image:'./images/cmp/photo2.png',
                 title:'Syndication',
-                subTitle:'I market your property locally, nationally, and internationally'
+                subTitle:'I market your property locally, nationally, and internationally',
+                show:false,
             },
             {
                 image:'./images/cmp/photo3.png',
                 title:'Virtual Tour',
-                subTitle:`Let's make your home stand out with a high quality virtual tour.`
+                subTitle:`Let's make your home stand out with a high quality virtual tour.`,
+                show:false,
             },
             {
                 image:'./images/cmp/photo4.png',
                 title:'Photography',
-                subTitle:'Beatiful, high-end photography is a central part of our marketing plan for your property.'
+                subTitle:'Beatiful, high-end photography is a central part of our marketing plan for your property.',
+                show:false,
             },
         ],
         sellingProcess:[
@@ -62,19 +66,23 @@ export const useDataStore = defineStore('data', {
         buyingProcess:[
             {
                 id:1,
-                content:'Initial Consultation & Planning'
+                content:'Initial Consultation & Planning',
+                show:false,
             },
             {
                 id:2,
-                content:'Search for a Home & Get Pre-Approved'
+                content:'Search for a Home & Get Pre-Approved',
+                show:false,
             },
             {
                 id:3,
-                content:'Submit an Offer'
+                content:'Submit an Offer',
+                show:false,
             },
             {
                 id:4,
-                content:'Complete Settlement Process'
+                content:'Complete Settlement Process',
+                show:false,
             },
         ],
         about:[

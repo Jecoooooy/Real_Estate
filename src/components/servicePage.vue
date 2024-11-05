@@ -71,7 +71,7 @@
     height: 100%;
 }
 .bottom-light{
-    transition: all 0.3s ease-in-out;
+    transition: all 0.6s ease-in-out;
     height: 100%;
     width: 50%;
 }

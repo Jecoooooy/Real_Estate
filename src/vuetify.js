@@ -15,7 +15,8 @@ const customDarkTheme = {
         secondary: "#FFFDE7",
         error: "#ff5722",
         text:"#ffffff",
-        third:"#3E2723"
+        third:"#3E2723",
+        info:"#01579B"
         
     },
 };

@@ -50,7 +50,7 @@
                 >
                     <p v-if="item.others" :class="(windowWidth >= 800 ? 'text-body-1 ' : 'text-body-2 ') + ' text-justify pb-4'">{{ item.others[0] }}</p>
                         <v-sheet color="white" class="pa-4 rounded-lg elevation-5 mb-4">   
-                            <v-row>
+                            <v-row align="center">
                                 <v-col
                                     v-for="(logo,ind) in item.logo"
                                     :key="ind"

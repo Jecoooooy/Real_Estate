@@ -35,7 +35,7 @@ const routes = [
         component: homeValuation
     },
     { 
-        path: "/real_estate",
+        path: "/",
         name:'Services',
         component: services
     },
@@ -60,6 +60,6 @@ const routes = [
 
 
 export default createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('/real_estate/'),
     routes,
 });
